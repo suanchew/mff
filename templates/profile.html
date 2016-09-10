@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+  <div class="container">
+    <div class="row">
+
+        <h3>Profile</h3>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="profile">
+              <p>First Name: {{ user.first_name }}</p>
+              <p>Last Name: {{ user.last_name }}</p>
+              <p>Zipcode: {{ user.zipcode }}</p>
+              <p>Email: {{ user.email }}</p>
+            </div>
+          </div>
+        
+    </div>
+  </div>
