@@ -5,16 +5,6 @@ from jinja2 import StrictUndefined
 from flask import Flask, render_template, request, flash, redirect, session
 # from flask_debugtoolbar import DebugToolbarExtension
 
-import datetime
-
-from model import connect_to_db, db, User, SavedPetition
-
-from api_search import petitions_by_issues, specific_petition, post_signature, edited_issues, search_body_and_title
-
-from database_queries import user_saved_petitions, user_signed_petitions, user_object
-
-from database_additions import new_user, new_petition
-
 app = Flask(__name__)
 
 # Set a secret key to enable the flask session cookies and the debug toolbar
@@ -32,11 +22,11 @@ def base_homepage():
     """Show homepage"""
 
     # if the user is logged in, route them to the homepage
-    if 'user_id' in session:
-        return redirect('/home')
+    # if 'user_id' in session:
+    #     return redirect('/home')
     # if no user if logged in return the base homepage form
-    else:
-        return render_template('base_homepage.html')
+    # else:
+    return render_template('base_homepage.html')
 
 
 @app.route('/login', methods=['GET'])
@@ -44,11 +34,11 @@ def login_form():
     """Show login form"""
 
     # if the user is logged in, route them to the homepage
-    if 'user_id' in session:
-        return redirect('/home')
+    # if 'user_id' in session:
+    #     return redirect('/home')
     # if no user if logged in return the login form
-    else:
-        return render_template('login_form.html')
+    # else:
+    return render_template('login_form.html')
 
 
 @app.route('/login', methods=['POST'])
@@ -60,7 +50,7 @@ def process_login():
     password = request.form['password']
 
     # check if user exists in database
-    user = User.query.filter_by(email=email).first()
+    # user = User.query.filter_by(email=email).first()
 
     # if user does not exist, redirected them to registration form
     if not user:
@@ -95,11 +85,11 @@ def user_profile():
     """Show information about user"""
 
     # get user id from the session
-    user_id = session['user_id']
+    # user_id = session['user_id']
     # call function to get user object from session
-    user = user_object()
+    # user = user_object()
 
-    return render_template('profile.html', user=user)
+    return render_template('profile.html')
 
 
 @app.route('/home')
@@ -107,9 +97,9 @@ def home():
     """Homepage"""
 
     # call function to get user object from session
-    user = user_object()
+    # user = user_object()
 
-    return render_template('homepage.html', user=user)
+    return render_template('homepage.html')
 
 
 @app.route('/register', methods=['GET'])
@@ -131,7 +121,7 @@ def process_registration():
     password = request.form['password']
 
     # check if email exists in database
-    user = User.query.filter_by(email=email).first()
+    # user = User.query.filter_by(email=email).first()
 
     # if user does not exist, create the account
     if not user:
@@ -153,13 +143,5 @@ def process_registration():
 
 ###############################################################################
 if __name__ == "__main__":
-    # We have to set debug=True here, since it has to be True at the point
-    # that we invoke the DebugToolbarExtension
-    # app.debug = False
 
-    connect_to_db(app)
-
-    # Use the DebugToolbar
-    # DebugToolbarExtension(app)
-
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=8000)
