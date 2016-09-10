@@ -30,8 +30,7 @@ class Places(db.Model):
 
     # create table named places with appropriate columns
     __tablename__ = 'places'
-    places_id = db.Column(db.Integer, primary_key=True,
-                                  autoincrement=True)
+    places_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(60), nullable=False)
     address = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(1000), nullable=True)
@@ -44,13 +43,11 @@ class Places(db.Model):
     wheelchair_accessible = db.Column(db.Boolean, nullable=True)
     url = db.Column(db.String(100), nullable=True)
 
-
-
 ##############################################################################
 # Helper functions
 
 
-def connect_to_db(app, db_uri="postgresql:///petitions"):
+def connect_to_db(app, db_uri="postgresql:///mff"):
     """Connect to database in Flask app."""
 
     # Configure to use PostgreSQL database
