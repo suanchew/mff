@@ -1,5 +1,7 @@
 """Models and database for petition website"""
 
+# from flask import SQLAlchemy
+
 from flask_sqlalchemy import SQLAlchemy
 
 # Connection to the Postgre SQL database through the Flask-SQLAlchemy library
