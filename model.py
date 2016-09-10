@@ -32,7 +32,7 @@ class Places(db.Model):
 
     # create table named places with appropriate columns
     __tablename__ = 'places'
-    places_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    place_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(60), nullable=False)
     address = db.Column(db.String(100), nullable=False)
     year_built = db.Column(db.Integer, nullable=True)
