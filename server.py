@@ -32,6 +32,17 @@ def base_homepage():
     # else:
     return render_template('base_homepage.html')
 
+@app.route('/place', methods=['GET'])
+def place():
+    """Show login form"""
+
+    # if the user is logged in, route them to the homepage
+    # if 'user_id' in session:
+    #     return redirect('/home')
+    # if no user if logged in return the login form
+    # else:
+    return render_template('place.html')
+
 
 @app.route('/login', methods=['GET'])
 def login_form():
