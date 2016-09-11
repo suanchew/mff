@@ -6,28 +6,7 @@ function initMap() {
 
     //temp array of locations - REPLACE WITH JSON DATA FROM Postgres
     var locations = [
-        ['Transamerica Redwood Park', 37.795494, -122.402185],
-        ['Transamerica Pyramid Center', 37.795335, -122.401836],
-        ['3 Empire Park', 37.794511, -122.403843],
-        ['Embarcadero Center West', 37.795183, -122.397395],
-        ['California Street Plaza', 37.793005, -122.405228],
-        ['Coworking Space', 37.793150, -122.404890],
-        ['California Street Plaza 2', 37.792240, -122.403705],
-        ['California Center Building', 37.792661, -122.400274],
-        ['Charles Schwab Building', 37.793830, -122.399030],
-        ['Garden Terrace', 37.793840, -122.398637],
-        ['Pine Center', 37.792616, -122.398759],
-        ['Fifty California Building', 37.794302, -122.397360],
-        ['One California Building', 37.793511, -122.397140],
-        ['Building and Plaza', 37.792990, -122.397870],
-        ['', 37.791635, -122.398805],
-        ['', 37.791208, -122.399951],
-        ['Citigroup Center Atrium', 37.790723, -122.401112],
-        ['Trinity Alley', 37.790306, -122.402583],
-        ['Crocker Galleria', 37.789738, -122.403019],
-        ['McKesson Plaza', 37.788970, -122.402687],
-        ['Market Street', 37.789419, -122.400768],
-        ['', 37.789860, -122.400345]
+        ['3 Empire Park', 37.794511, -122.403843]
     ];
 
     //find user's location via geolocation and drop a marker
