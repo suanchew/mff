@@ -1,3 +1,4 @@
+
 function initMap() {
     var pos;
     var mapDiv = document.getElementById('map');

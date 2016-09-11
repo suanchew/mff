@@ -1,4 +1,6 @@
 {% extends 'base.html' %}{% block body %}
+
+
 <div>
     <div class="jumbotron">
         <div class="container">
@@ -28,12 +30,13 @@
             </div>
         </div>
     </div>
+
+
     <!-- googlemap integration -->
     <script type="text/javascript" src="../static/js/googlemap.js" />
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNab36EydKLH1ay3u8JjosC0zgNpPpRw4&callback=initMap"></script>
     <script type="text/javascript">
         initMap();
     </script>
-
 
     {% endblock %}
