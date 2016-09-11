@@ -27,7 +27,7 @@ header h1 {
     top: 0.2em;
     left: 0.2em;
     height: 3em;
-    font-size: 1em;
+    font-size: 2em;
 }
 
 #logo {
@@ -61,13 +61,13 @@ input {
 h1 {
     text-transform: uppercase;
     margin: 0;
-    font-size: 200%;
+    font-size: 300%;
     padding-bottom: 0.3em;
 }
 
 h2 {
     color: gray;
-    font-size: 140%;
+    font-size: 180%;
 }
 
 h3 {
@@ -78,9 +78,22 @@ h3 {
 
 .container img {
     float: right;
-    width: 100%;
+    width: 50%;
     margin: 0 0 1em 1em;
     x-index: -1;
+}
+
+@media screen and (max-width: 800px) {
+    .container img {
+        width: 100%;
+    }
+    h1 {
+        font-size: 250%;
+    }
+
+    h2 {
+        font-size: 180%;
+    }
 }
 
 hr {
@@ -92,6 +105,8 @@ table#place-profile img {
     height: 1em;
     width: 1em;
     float: left;
+    margin: 0;
+    padding: 0 1em 0 0 ;
 }
 
 table#place-profile {
