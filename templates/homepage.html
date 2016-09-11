@@ -1,24 +1,15 @@
-
 {% extends 'base.html' %}
 {% block body %}
 
-<header>
-    <img id="logo" src="../static/images/logo_meet-for-free.png">
-    <span>Occupy Your City.</span> Meet for Free
-    <link type="text/css" rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,400,600,700&amp;lang=en" />
-
-</header>
 <login></login>
 <div class="container">
-
-    <img src="" alt="PublicSpace">
+    <img src="https://dl.dropboxusercontent.com/u/40044962/MeetForFree/popos_images/Empire-Park.jpg" style="width:400px">
     <h1>Empire Park Public Space</h1>
     <H2>505 Montgomery St<br>(at Sacramento)<br>Financial District
     </H2>
 
     <table id="place-profile">
-        <tr><th><img src="../static/images/icon_wifi.png">Type:</th><td>Indoor</td></tr>
+        <tr><th>Type:</th><td>Indoor</td></tr>
         <tr><th>Seating:</th><td>None</td></tr>
         <tr><th>Wifi:</th><td>None</td></tr>
         <tr><th>Restroom:</th><td>None</td></tr>
@@ -36,16 +27,14 @@
     <table id="place-profile">
         <tr><td><input type="submit" name="submit"></td></tr>
         </table>
+        <div id="map" height="50px" width="50px"></div>
+
     </div>
-    <div id="map"></div>
 
-
-    <script type="text/javascript" src="../static/js/googlemap.js" />
+    <script type="text/javascript" src="../static/js/googlemapplace.js" />
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNab36EydKLH1ay3u8JjosC0zgNpPpRw4&callback=initMap"></script>
     <script type="text/javascript">
         initMap();
     </script>
-
-{% block body %}
 
 {% endblock %}
