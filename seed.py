@@ -14,12 +14,12 @@ def load_places():
 
     # Delete all rows in table, so if we need to run this a second time,
     # we won't be trying to add duplicate places
-    User.query.delete()
+    Places.query.delete()
 
     # Read mff_sfpopo.csv file and insert data
     for row in open("mff_sfpopo.csv"):
         row = row.rstrip()
-        place_id,name, address, year_built, description, features, indoor_outdoor, wifi,seating, restroom, coord, place_photo, hours, neighborhood, wheelchair_accessible, url = row.split("\t")
+        place_id, name, address, year_built, description, features, indoor_outdoor, wifi,seating, restroom, coord, place_photo, hours, neighborhood, wheelchair_accessible, url = row.split("|")
 
         place = Places(place_id=place_id,name=name,address=address,
                        year_built=year_built,description=description,
@@ -27,7 +27,6 @@ def load_places():
                        wifi=wifi,seating=seating,restroom=restroom,coord=coord,
                        place_photo=place_photo,hours=hours,neighborhood=neighborhood,
                        wheelchair_accessible=wheelchair_accessible,url=url)
-
         # We need to add to the session or it won't ever be stored
         db.session.add(place)
 
